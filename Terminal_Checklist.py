@@ -83,6 +83,10 @@ def select(function_code):
 
 running = True
 
+
+# "gotta make the else function if the user inputs wrong or incorrect answer below"
+# else running to skip to rewrite the answer after failed error screen" 
+
 while running:
     selection =input("Press C to add to the list, R to Read from the list, L to display the list, and Q to quit, M to mark completed,U to update, D to destroy:").upper()
 
