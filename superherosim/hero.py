@@ -4,14 +4,14 @@ import random
 class Hero:
 
 
-  def __init__(self, name="Hero", starting_health=1000):
+  def __init__(self, name ="Hero", starting_health=1000):
     '''Instance properties:
-      name: Her0
+      name: Hero
       starting_health: integer
       current_health: integer
     '''
 
-    self.name = name
+    self.name = name 
     
     self.starting_health = starting_health
 
