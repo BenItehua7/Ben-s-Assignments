@@ -12,5 +12,5 @@ class Ability:
 
         return attack_value
 
-ability = Ability("Super Fast", 1000)
-ability.attack
+ability = Ability("Super Speed", 100)
+ability.attack 

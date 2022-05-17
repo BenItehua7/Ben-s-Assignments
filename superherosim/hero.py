@@ -1,5 +1,7 @@
 
 import random
+import armor
+import ability
 
 class Hero:
 
