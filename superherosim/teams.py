@@ -20,5 +20,9 @@ class team:
         for item in self.heroes:
             print(item) 
     
-   #def add_kill(self)
+    def add_kill(self):
+        self.add_kill += 1
+
+    def add_death(self):
+        self.add_death += 1
     

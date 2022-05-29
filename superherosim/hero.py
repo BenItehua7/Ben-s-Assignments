@@ -2,11 +2,13 @@ import random
 from unicodedata import name
 from ability import Ability 
 from armor import armor_class
+from weapon import weapon
+
 
 class Hero:
 
 
-  def __init__(self, name ="Hero", starting_health=100):
+  def __init__(self, name = "Hero", starting_health=100):
     '''Instance properties:
       name: Hero
       starting_health: integer
@@ -23,9 +25,13 @@ class Hero:
 
     self.ability= []
 
+  def __repr__(self):
+    return f'hero?({self.name}, {self.starting_health}) '
+
   def add_ability(self,ability):
     self.ability.append(ability)
     return self.ability
+
 
   def attack(self):
     attack_value = 0
@@ -35,39 +41,47 @@ class Hero:
 
     return attack_value
 
+
+  def take_damage(self, incoming_damage):
+    damage = incoming_damage - self.defend()
+    if damage >= 0: 
+      self.current_health -= damage
+
   def add_armor(self,armor):
     self.armor.append(armor)
     return self.armor 
 
-  #def add_weapon(self,weapon):
+  
     
 
   def defend(self):
     defend_value = 0
     for armor in self.armor:
       defend_value += armor.defend()
-
     print(f"{self.name} has {defend_value} defend")
     return defend_value
 
-  def take_damage(self,incoming_damage):
-    damage = incoming_damage - self.defend()
 
-    if damage >= 0 : 
-      self.current_health -= damage
+
+  
+
 
   def add_weapon(self,weapon):
     self.weapon.append(weapon)
     print(f"{self.name}") (f"{self.weapon}")
     return self.add_weapon
       
+
   def add_kill(self):
       self.add_kill += 1
+
 
   def add_death(self):
       self.add_death += 1
 
-  def battle(self, opponent):
+
+
+  def battle(self , opponent):
     ''' Current Hero will take turns battling the opponent hero passed in.
     '''
     if not self.ability and not opponent.ability:
@@ -78,12 +92,16 @@ class Hero:
 
       print (f"{self.name}: {self.current_health}")
       print (f"{opponent.name}: {opponent.current_health}")
-      opponent.take_damage(self.attack())
+
       self.take_damage(opponent.attack())
+      opponent.take_damage(self.attack())
+
+
 
       if self.current_health <= 0:
        print (f"{opponent.name} Winner")
        fight = False
+
       elif opponent.current_health <= 0:
        print (f"{self.name} Winner")
        fight = False
@@ -102,10 +120,11 @@ if __name__ == "__main__":
     #hero1.battle(hero1) 
     ability1 = Ability("bark", 100)
     hero1.add_ability(ability1)
+    hero2.add_ability(ability1)
 
     #print(hero1.attack())
 
-    armor1 = armor_class("rusty spoons", 100)
+    armor1 = armor_class("pants", 100)
 
     hero1.add_armor(armor1)
     hero2.add_armor(armor1)
