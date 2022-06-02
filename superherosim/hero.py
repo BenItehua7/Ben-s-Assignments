@@ -3,6 +3,7 @@ from unicodedata import name
 from ability import Ability 
 from armor import armor_class
 from weapon import weapon
+from teams import teams 
 
 
 class Hero:
