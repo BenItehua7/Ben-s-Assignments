@@ -6,5 +6,5 @@ if 0 <= age <= 100:
 elif age <=0:
     print("People cannot have a negative age")
 elif age >= 100:
-    print("100 is the maximum age for this program")
+    print("100 is the maximum age")
     
