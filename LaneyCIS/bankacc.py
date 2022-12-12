@@ -16,12 +16,20 @@ def withdrawal(withdrawal_amount):
 
 def main():
     global balance
-    User_Name_Input= input ("Enter Name: ")
+    try:
+        User_Name_Input= str(input("Enter Name: "))
+    except:
+        print("invalid input")
     print ("Hello", User_Name_Input, " Welcome to your Bank account")
-    balance = float(input("Enter starting balance: "))
-    print ("Starting balance: ", balance)
-    menu_control = int(input("Do you want to Deposit (1) or withdrawal (2): "))
-    
+    try:
+        balance = float(input("Enter starting balance: "))
+        print ("Starting balance: ", balance)
+    except:
+        print("invalid input")
+    try:
+        menu_control = int(input("Do you want to Deposit (1) or withdrawal (2): "))
+    except:
+        print("invalid input")
     if menu_control == 1:
         deposit = float(input("Enter amount you want to deposit: "))
         if deposit > 0:

@@ -78,8 +78,8 @@ while True:
 
         # Move snake
         for i in range((len(snakePosX)  1), 0, 1):
-            snakePosX[i] = snakePosX[i – 1]
-            snakePosY[i] = snakePosY[i – 1]
+            snakePosX[i] = snakePosX [i – 1]
+            snakePosY[i] = snakePosY [i – 1]
 
         snakePosX[0] += movementX
         snakePosY[0] += movementY
@@ -139,4 +139,5 @@ while True:
         for event in sense.stick.get_events():
             if event.direction == "middle":
                 score = 0
-view raw
+                
+view   raw
