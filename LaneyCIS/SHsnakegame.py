@@ -1,3 +1,6 @@
+##RASBERRY PI FINAL PROJECT:///// 
+##SNAKEGAME PRESENTATION://////
+
 from sense_hat import SenseHat
 import time
 import random
